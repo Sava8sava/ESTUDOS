@@ -3,7 +3,7 @@ class No:
         self.data = data
         self.next = None
         self.priori = None
-
+#classe queue teste
 class Queue:
     def __init__(self):
         self.head = None
