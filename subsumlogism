@@ -1,0 +1,42 @@
+--------------------------------------------------------------------------------
+-- Project :
+-- File    :
+-- Autor   :
+-- Date    :
+--
+--------------------------------------------------------------------------------
+-- Description :
+--
+--------------------------------------------------------------------------------
+--sub e sum junto 
+
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY subtractor IS
+  PORT (
+  ------------------------------------------------------------------------------
+  --Insert input ports below
+   A : in std_logic ;
+   B : in std_logic;
+   C : in std_logic;
+
+   Cout : out std_logic;
+   ou : out std_logic
+    );
+END subtractor;
+
+--------------------------------------------------------------------------------
+--Complete your VHDL description below
+--------------------------------------------------------------------------------
+
+ARCHITECTURE TypeArchitecture OF subtractor IS
+
+BEGIN
+
+Cout <= (A XOR B) XOR C ;
+ou <= (NOT A AND B) OR (NOT (A XOR B) AND C);
+
+
+END TypeArchitecture;
