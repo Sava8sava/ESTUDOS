@@ -19,15 +19,9 @@ if __name__ == "__main__":
 
     while True:
 
-        print("1. Inserir pessoa: ")
-        print("2. Listar pessoas cadastradas:")
-        print("3. Buscar pessoa por CPF:" )
-        print("4. Buscar pessoa por Telefone:")
-        print("5. Remover pessoa por CPF:")
-        print("6. Sair:")
+        op = int(input("1. Inserir pessoa:\n2. Listar pessoas cadastradas:\n3. Buscar pessoa por CPF:\n4. Buscar pessoa por Telefone:\n5. Remover pessoa por CPF:\n6.Sair:\n escolha a opção"))
 
 
-        op = int(input("selecione a opção:"))
         
 
         if op == 1 :
