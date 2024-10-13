@@ -23,17 +23,26 @@ private:
     int size;
     int capacity = lim;
     Pessoa *fila;
+    int prio_pess = 0;
+    int notprio_pers = 0;
+    int nprioperswait = 0;
+    int prioperswait = 0;
 
 public:
     Queuearray() {
         fila = new Pessoa[capacity];
         size = 0;
+        Menu();
+
     }
+
+
 
     ~Queuearray() {
         delete[] fila;
     }
 
+    
     bool isEmpty() {
         return size == 0;
     }
@@ -58,6 +67,13 @@ public:
 
         // Inserir a nova pessoa na posição correta
         fila[i + 1] = newPerson;
+
+         if(newPerson.priority<1){
+            ++nprioperswait;
+        }else{
+            ++prioperswait;
+        }
+
         size++;
     }
 
@@ -67,14 +83,25 @@ public:
             return;
         }
 
+         if(fila[0].priority<1){
+            ++notprio_pers;
+            --nprioperswait;
+        }else{
+            ++prio_pess;
+            --prioperswait;
+        }
+
         // Remover a pessoa do início da fila (com maior prioridade)
-        cout << fila[0].nome << " desenfileirado, idade: " << fila[0].idade 
+        cout << fila[0].nome << " atendendido, idade: " << fila[0].idade 
              << ", prioridade: " << fila[0].priority << "." << endl;
 
         // Mover os outros elementos para trás
         for (int i = 1; i < size; i++) {
             fila[i - 1] = fila[i];
         }
+
+       
+
         size--;
     }
 
@@ -93,34 +120,82 @@ public:
         else if (age >= 100) { return 5; }
         else { return 0; }
     }
+
+    void strqueue(){
+         if (isEmpty()) {
+        cout << "A Fila esta vazia" << endl;
+        return;
+    }
+    
+    cout << "Fila atual:" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << fila[i] << endl; // Usando a sobrecarga do operador << para imprimir Pessoa
+    }
+
+    }
+
+    void getinfo(){
+        cout<<"o numero de pessoas atendidas:\natendimento normal: "<<notprio_pers<<endl<<"atendimento prioritario: "<<prio_pess<<endl<<"tamanho atual da fila de atendimento:"<<size<<endl<<"numero de pessoas a ser atendidas:"<<endl<<"atendimento normal: "<<nprioperswait<<endl<<"atendimento prioritario:"<<prioperswait<<endl;
+
+
+    }
+
+    void Menu(){
+        int opt = 0;
+        bool active_loop = true;
+        while(active_loop){
+        cout<<"###############"<<endl<<"1.adicionar cliente. "<<endl<<"2.atender cliente. "<<endl<<"3.mostrar ordem da fila. "<<endl<<"4.gerar dados de consulta. "<<endl<<"5.sair\n"<<endl<<"escolha uma opcao.\n"<<"###############"<<endl;
+        //acentos dao erros graficos corrigir depois,tabela ascii talves? 
+
+        cin>>opt;
+        cin.ignore();
+
+        switch (opt){
+        case 1: { 
+          string nameaux;
+          int idadeaux;
+          cout<<"adicionando cliente"<<endl;
+          cout<<"informe o nome"<<endl;
+          getline(cin,nameaux);
+          cout<<"informe a idade"<<endl;
+          cin>>idadeaux;
+          cin.ignore();
+          enqueue(nameaux,idadeaux);
+          break;
+        }
+
+        case 2:
+         cout<<"atendendo o primeiro da fila"<<endl;
+         dequeue();
+         break;
+        
+        case 3:
+         strqueue();
+         break;
+
+        case 4:
+         getinfo();
+         break;
+
+        case 5:
+         if(!isEmpty()){
+         cout<<"a fila ainda nao esta vazia."<<endl;
+         break;
+         }
+         active_loop = false;
+         break;
+
+        default:
+            cout<<"erro"<<endl;
+            break;
+      }
+    }
+  } 
+ 
 };
 
 int main() {
     Queuearray fila;
-
-    fila.enqueue("jorge", 10);
-    fila.enqueue("mario", 60);
-    fila.enqueue("domingos", 103);
-    fila.enqueue("julio", 80);
-    fila.enqueue("1", 72);
-    fila.enqueue("2", 97);
-    fila.enqueue("3", 20);
-    fila.enqueue("4", 30);
-    fila.enqueue("5", 71);
-    fila.enqueue("mumia", 200);
-
-  for(size_t i = 0;i<lim;++i){
-
-    fila.dequeue();
-  }
-   fila.enqueue("mario",35);
-   fila.enqueue("69",69);
-   fila.enqueue("ggggg",5);
-   
-   fila.dequeue();
-
-    
-    cout << fila.peek() << endl;  
 
     return 0;
 }
