@@ -69,3 +69,8 @@ if __name__ == "__main__":
             except:
                 print('dado invalido')    
 
+        elif op == 6:
+            break
+
+        else :
+            print("opção inválida")
