@@ -1,0 +1,38 @@
+--------------------------------------------------------------------------------
+-- Project :
+-- File    :
+-- Autor   :
+-- Date    :
+--
+--------------------------------------------------------------------------------
+-- Description :
+--
+--------------------------------------------------------------------------------
+
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY edfhjdf IS
+  PORT (
+  ------------------------------------------------------------------------------
+  A : in std_logic;
+  B : in std_logic;
+  C : in std_logic;
+  S : out std_logic;
+  ov : out std_logic 
+    );
+END edfhjdf;
+
+--------------------------------------------------------------------------------
+--Complete your VHDL description below
+--------------------------------------------------------------------------------
+
+ARCHITECTURE TypeArchitecture OF edfhjdf IS
+
+BEGIN
+
+S <= ((A xor B) xor C);
+ov <= ((A and B) xor ((A xor B) and C));
+
+
+END TypeArchitecture;
