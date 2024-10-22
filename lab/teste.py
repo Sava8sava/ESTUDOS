@@ -1,0 +1,3 @@
+import Pessoa
+
+teste = Pessoa()

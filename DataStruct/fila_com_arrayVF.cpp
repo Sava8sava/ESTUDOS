@@ -100,8 +100,6 @@ public:
             fila[i - 1] = fila[i];
         }
 
-       
-
         size--;
     }
 
@@ -134,10 +132,19 @@ public:
 
     }
 
-    void getinfo(){
+    void getinfo(bool active_loop){
         cout<<"o numero de pessoas atendidas:\natendimento normal: "<<notprio_pers<<endl<<"atendimento prioritario: "<<prio_pess<<endl<<"tamanho atual da fila de atendimento:"<<size<<endl<<"numero de pessoas a ser atendidas:"<<endl<<"atendimento normal: "<<nprioperswait<<endl<<"atendimento prioritario:"<<prioperswait<<endl;
 
-
+        if(active_loop == false){
+              int total = notprio_pers + prio_pess;
+        if (total > 0) { // Verifica se total não é zero
+            double notprioperct = (static_cast<double>(notprio_pers) / total) * 100; // Converte para double
+            double prioperct = (static_cast<double>(prio_pess) / total) * 100; // Converte para double
+            cout << "porcetagem de pessoas atendidas:\n"
+                 << "atendimento normal: " << notprioperct << "%" << endl
+                 << "atendimentos preferenciais: " << prioperct << "%" << endl;
+        }
+      }
     }
 
     void Menu(){
@@ -174,7 +181,7 @@ public:
          break;
 
         case 4:
-         getinfo();
+         getinfo(active_loop);
          break;
 
         case 5:
@@ -183,6 +190,7 @@ public:
          break;
          }
          active_loop = false;
+         getinfo(active_loop);
          break;
 
         default:

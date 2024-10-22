@@ -1,0 +1,11 @@
+CPF: 3
+Nome: marcos
+Endereço: 1234
+Telefone: ['913']
+
+CPF: 123
+Nome: felipe
+Endereço: 3456
+Telefone: ['890', '4567']
+
+CPF: 098Nome: testeEndereço: 4Telefone: ['000']
