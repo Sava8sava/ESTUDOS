@@ -24,10 +24,7 @@ def salvar_dados_em_arquivo(mapa, nome_arquivo):
 
 def mostrar_pessoas(nome_arquivo):
     with open(nome_arquivo, 'r') as arquivo:
-        dados = arquivo.read()
-        if(dados == " "):
-            print("nada aqui")
-            
+        dados = arquivo.read()       
         print(dados)
 
 

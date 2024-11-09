@@ -1,11 +1,16 @@
 CPF: 3
 Nome: marcos
-Endereço: 1234
+Endereï¿½o: 1234
 Telefone: ['913']
 
 CPF: 123
 Nome: felipe
-Endereço: 3456
+Endereï¿½o: 3456
 Telefone: ['890', '4567']
 
-CPF: 098Nome: testeEndereço: 4Telefone: ['000']
+
+CPF: 555
+Nome: faiz
+Endereço: 897089
+Telefone: ['786']
+

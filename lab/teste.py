@@ -1,3 +1,1 @@
-import Pessoa
 
-teste = Pessoa()
