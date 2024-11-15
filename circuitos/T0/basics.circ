@@ -62,45 +62,6 @@
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(140,130)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(150,70)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(670,90)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="5"/>
-    </comp>
-    <comp loc="(600,170)" name="FOURbitsum"/>
-    <comp loc="(600,270)" name="FOURbitsubtra"/>
-    <comp loc="(600,370)" name="Comp2s"/>
-    <comp loc="(600,470)" name="FourbitAdder_Sub"/>
-    <comp loc="(630,610)" name="fourbitsumVHDL"/>
-    <wire from="(140,130)" to="(140,190)"/>
-    <wire from="(140,190)" to="(180,190)"/>
-    <wire from="(150,70)" to="(210,70)"/>
-    <wire from="(180,190)" to="(180,630)"/>
-    <wire from="(180,190)" to="(380,190)"/>
-    <wire from="(180,630)" to="(370,630)"/>
-    <wire from="(210,610)" to="(370,610)"/>
-    <wire from="(210,70)" to="(210,610)"/>
-    <wire from="(210,70)" to="(380,70)"/>
-    <wire from="(360,690)" to="(370,690)"/>
-    <wire from="(370,610)" to="(370,620)"/>
-    <wire from="(370,620)" to="(410,620)"/>
-    <wire from="(370,630)" to="(370,640)"/>
-    <wire from="(370,640)" to="(400,640)"/>
-    <wire from="(380,70)" to="(380,170)"/>
-    <wire from="(400,630)" to="(400,640)"/>
-    <wire from="(400,630)" to="(410,630)"/>
-    <wire from="(410,610)" to="(410,620)"/>
-    <wire from="(600,90)" to="(600,170)"/>
-    <wire from="(600,90)" to="(670,90)"/>
   </circuit>
   <circuit name="halfsum">
     <a name="appearance" val="logisim_evolution"/>
