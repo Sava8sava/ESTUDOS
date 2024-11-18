@@ -5,16 +5,19 @@ class TSLL:
         self.Word_list = set()
         pathL = r"/home/macaxeira/projetos/ESTUDOS/DataStruct/TS/leipzig100k.txt"
         self.readf(pathL)
-        
+
+    def filter(self,word):
+        #ler no arquivo linha,seprarar as palavras dessa linha,jogar pra essa funçao de filtrar feita pelo vitor retornar a palvra
+        pass
     def readf(self,path):
 
         with open(path,'r') as file:
             content = file.read()
             newpat = r"/home/macaxeira/projetos/ESTUDOS/DataStruct/TS/teste.txt"
 
-
-            modContent = re.sub(r"[^\w\s']", ' ', content)
-            modContent = re.sub(r'\s+', ' ', modContent).strip()
+            '''
+            aqui modificar a funçao para lert linha por linha,separar as palavras dessa linha e mandar para funçao filtradora 
+            '''
 
             words = modContent.split(' ')
             
