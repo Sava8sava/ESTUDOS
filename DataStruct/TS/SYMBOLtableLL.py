@@ -1,3 +1,4 @@
+from Listsetup import TSLL
 class Node:
     def __init__(self,key,value):
             self.key = key
@@ -5,10 +6,11 @@ class Node:
             self.next = None
 
 
-        
+#TODO  usar composição para adicionar a classe ttls nas tabelas de simbolos         
 class LLSymbolTable:
-      def __init__(self):
-            self.head = None       
+      def __init__(self,path):
+            self.head = None
+            self.txt_organizer = TSLL(path)     
       
       def insertdata(self,key,value):
             aux = self.head
@@ -45,7 +47,27 @@ class LLSymbolTable:
                   aux_prev = aux 
                   aux = aux.next
             raise KeyError(r"KEY '{key}' not found")
-            
+      
+      #funções exclusivas para o trabalho:
+
+      def GetwordsfromTXT(self):
+            self.txt_organizer.readf()
+            print("readf terminou")
+            words_already_seen = set()
+
+            for word in self.txt_organizer.Word_list:
+                  if word not in words_already_seen:
+                        self.insertdata(word,1)
+                        words_already_seen.add(word)
+
+      def ExportToFile(self,new_path):
+            words = []
+            aux = self.head
+            while aux:
+                  words.append(aux.key)
+                  aux = aux.next
+
+            self.txt_organizer.writef(new_path,words)
 
 
 

@@ -1,40 +1,32 @@
 import re
 
 class TSLL:
-    def __init__(self):
-        self.Word_list = set()
-        pathL = r"/home/macaxeira/projetos/ESTUDOS/DataStruct/TS/leipzig100k.txt"
-        self.readf(pathL)
+    def __init__(self,path):
+        self.Word_list = []
+        self.pathL = path
+        
 
-    def filter(self,word):
-        #ler no arquivo linha,seprarar as palavras dessa linha,jogar pra essa funçao de filtrar feita pelo vitor retornar a palvra
-        pass
-    def readf(self,path):
+    def filter(self,words):
+       for word in words:
+           
+           filtred_word  =re.sub(r"(?<![a-zA-Z])'|'(?![a-zA-Z])|(?<![a-zA-Z0-9])[^\w']+|[^\w']+(?![a-zA-Z0-9])", "", word)
+           if filtred_word:
+               self.Word_list.append(filtred_word)
 
-        with open(path,'r') as file:
-            content = file.read()
-            newpat = r"/home/macaxeira/projetos/ESTUDOS/DataStruct/TS/teste.txt"
+         
+    def readf(self):
 
-            '''
-            aqui modificar a funçao para lert linha por linha,separar as palavras dessa linha e mandar para funçao filtradora 
-            '''
-
-            words = modContent.split(' ')
+        with open(self.pathL,'r') as file:
+            for lines in file:
+                words = lines.strip().split()
+                self.filter(words)
             
             
-            self.Word_list.update(word.lower() for word in words)
-            
-            
-            self.writef(newpat)
-
-    def writef(self,newpath):
+    def writef(self,newpath,arr):
         with open(newpath,'w') as newfile:
-            for word in sorted(self.Word_list):
+            for word in arr:
                 newfile.write(word + '\n')
                 
 
             
 
-    
-if __name__ == "__main__":
-    TSLL()

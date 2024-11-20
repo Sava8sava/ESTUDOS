@@ -1,51 +1,55 @@
 from SYMBOLtableLL import LLSymbolTable
 from SYMBOLtablearr import TSarr
+from SYMBOLtableshash import Hashtable
 import time
 
-def measure_time(TS,arr):
+def measure_time(TS,path,newfilepath,*args):
     time_init = time.time()
-    TS(arr)
+    TS(path,newfilepath,*args)
     end_time = time.time()
     return end_time -time_init
 
-def Createlist(path):
-    words = []
-    try:
-        with open(path,'r') as file:
-            for line in file:
-                #strip para retirar os espaços 
-                word = line.strip()
-                if word is not None:
-                    words.append(word)
-    except FileNotFoundError:
-        print("erro arquivo não encontrado")
-    return words
 
-def LLTS(arr):
-    table = LLSymbolTable()
-    for index,word in enumerate(arr):
-        #adicionando o index como chave 
-        table.insertdata(index,word)
+
+def LLTS(path,newfilepath):
+    table = LLSymbolTable(path)
+    table.GetwordsfromTXT()
+    table.ExportToFile(newfilepath)
     return table
 
-def ARRTS(arr):
-    table = TSarr()
-    for word in arr:
-        #adicionando o index como chave 
-        table.insertdata(word,1)
-    print(table.get('0'))    
+def ARRTS(path,newfilepath):
+    table = TSarr(path)
+    table.GetwordsfromTXT()
+    table.ExportToFile(newfilepath)  
     return table
 
-
+def HASHTS(path,newfilepath,cap):
+    table = Hashtable(cap,path)
+    table.GetwordsfromTXT()
+    table.ExportToFile(newfilepath)
+    return table 
 
 if __name__ == "__main__":
-    path = "teste.txt"
-    words = Createlist(path)
-    sorted(words)
     
+    pathL = "leipzig100k.txt"
+    pathLL = "outputs_das_tabelas/LinkedList.txt"
+    pathAR = "outputs_das_tabelas/array.txt"
+    pathH = "outputs_das_tabelas/HashTable.txt"
+        
 
-if words is not None:
-    #tempo = measure_time(lambda arr:LLTS(arr),words)
-    tempo = measure_time(ARRTS,words)
-    print(f"Tempo para adicionar {len(words)} palavras: {tempo:.6f} segundos.")    
+    
+    # Medindo o tempo para LLTS
+    tempo_ll = measure_time(LLTS,pathL,pathLL)
+    print(f"LLTS: {tempo_ll:.6f} segundos.")
+
+    # Medindo o tempo para ARRTS
+    tempo_arr = measure_time(ARRTS,pathL,pathAR)
+    print(f"ARRTS: {tempo_arr:.6f} segundos.")
+
+    # Medindo o tempo para HASHTS 
+    capacidade_hash = 227
+    tempo_hash = measure_time(HASHTS,pathL,pathH,capacidade_hash)
+    print(f"HASHTS: {tempo_hash:.6f} segundos.")
+
+
     
