@@ -31,10 +31,10 @@ def HASHTS(path,newfilepath,cap):
 
 if __name__ == "__main__":
     
-    pathL = "leipzig100k.txt"
-    pathLL = "outputs_das_tabelas/LinkedList.txt"
-    pathAR = "outputs_das_tabelas/array.txt"
-    pathH = "outputs_das_tabelas/HashTable.txt"
+    pathL = "primeira parte/leipzig100k.txt"
+    pathLL = "primeira parte/outputs_das_tabelas/LinkedList.txt"
+    pathAR = "primeira parte/outputs_das_tabelas/array.txt"
+    pathH = "primeira parte/outputs_das_tabelas/HashTable.txt"
         
 
     

@@ -20,6 +20,7 @@ class TSarr:
     def insertdata(self,key,data):
         index = self.Binarysearch(key)
         if index < len(self.keys) and self.keys[index]== key:
+           self.table[index] = data
            return
         else:
             self.keys.insert(index,key)

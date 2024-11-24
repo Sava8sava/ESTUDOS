@@ -13,17 +13,27 @@ class LLSymbolTable:
             self.txt_organizer = TSLL(path)     
       
       def insertdata(self,key,value):
+            if self.head is None:
+                  self.head = Node(key,value)
+                  return
+            
             aux = self.head
+            
             while aux:
                   if aux.key == key:
                         aux.value = value
                         return
 
+                  if aux.next is None: 
+                        new_node = Node(key, value)
+                        aux.next = new_node
+                        return     
                   aux = aux.next
 
-            new_node = Node(key,value)
-            new_node.next = self.head
-            self.head = new_node      
+            #new_node = Node(key,value)
+            #new_node.next = self.head
+            #self.head = new_node
+
       
       def get(self,key):
             aux = self.head
@@ -53,12 +63,12 @@ class LLSymbolTable:
       def GetwordsfromTXT(self):
             self.txt_organizer.readf()
             print("readf terminou")
-            words_already_seen = set()
+            #words_already_seen = set()
 
             for word in self.txt_organizer.Word_list:
-                  if word not in words_already_seen:
+                  #if word not in words_already_seen:
                         self.insertdata(word,1)
-                        words_already_seen.add(word)
+                        #words_already_seen.add(word)
 
       def ExportToFile(self,new_path):
             words = []

@@ -3,7 +3,7 @@ import numpy as np
 
 # Dados
 tipo_de_ts = ['Lista Encadeada com BS', "Array com Binary Search", "Hash Table"]
-tempoTs = [106.19, 0.18, 0.88]
+tempoTs = [554.19, 7.18, 31.88]
 
 # Criação do gráfico
 plt.figure(figsize=(8, 6))
