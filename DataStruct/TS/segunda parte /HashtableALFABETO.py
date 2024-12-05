@@ -1,3 +1,4 @@
+#função hash usando a primeira letra dos Nomes 
 class Node :
     def __init__(self,key,data):
         self.key = key  

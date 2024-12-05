@@ -27,7 +27,7 @@ class Linkedlist:
         n = self.head
         res = ""
         while n is not None:
-            res += f'"{n.key}": {n.val}; '
+            res += f'"{n.key}": {n.data}; '
             n = n.next
         return res
                       
