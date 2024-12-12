@@ -545,15 +545,15 @@
       <a name="facing" val="east"/>
       <a name="label" val="ty"/>
     </comp>
-    <comp lib="0" loc="(370,560)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="tz"/>
-    </comp>
-    <comp lib="0" loc="(380,880)" name="Tunnel">
+    <comp lib="0" loc="(330,880)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="ty"/>
     </comp>
-    <comp lib="0" loc="(380,920)" name="Tunnel">
+    <comp lib="0" loc="(330,920)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="tz"/>
+    </comp>
+    <comp lib="0" loc="(370,560)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="tz"/>
     </comp>
@@ -656,9 +656,7 @@
     <comp lib="1" loc="(510,960)" name="OR Gate"/>
     <comp lib="1" loc="(520,1100)" name="NOT Gate"/>
     <comp lib="1" loc="(540,250)" name="XOR Gate"/>
-    <comp lib="1" loc="(550,600)" name="AND Gate">
-      <a name="inputs" val="3"/>
-    </comp>
+    <comp lib="1" loc="(550,600)" name="AND Gate"/>
     <comp lib="1" loc="(550,680)" name="AND Gate">
       <a name="inputs" val="3"/>
     </comp>
@@ -689,6 +687,8 @@
     <wire from="(290,770)" to="(320,770)"/>
     <wire from="(320,310)" to="(540,310)"/>
     <wire from="(320,470)" to="(560,470)"/>
+    <wire from="(330,880)" to="(380,880)"/>
+    <wire from="(330,920)" to="(380,920)"/>
     <wire from="(370,560)" to="(640,560)"/>
     <wire from="(390,230)" to="(480,230)"/>
     <wire from="(400,1040)" to="(420,1040)"/>
@@ -721,8 +721,6 @@
     <wire from="(470,350)" to="(500,350)"/>
     <wire from="(480,1030)" to="(480,1060)"/>
     <wire from="(480,1030)" to="(600,1030)"/>
-    <wire from="(480,600)" to="(480,610)"/>
-    <wire from="(480,600)" to="(500,600)"/>
     <wire from="(480,610)" to="(480,620)"/>
     <wire from="(480,620)" to="(500,620)"/>
     <wire from="(510,870)" to="(540,870)"/>
