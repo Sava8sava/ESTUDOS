@@ -63,7 +63,7 @@ class BinaryTree:
     def size(self):
         print(f"O TAMANHO DA ARVORE(QUANTIDADE DE NÓS): {self._size}\n")
 
-    def getheight(self,key):
+    def getdepth(self,key):
         if self.root == None:
                 print("ARVORE VAZIA\n")
                 return
@@ -77,7 +77,7 @@ class BinaryTree:
 
         while next is not None:
             if key == next.data:
-                print(f"ALTURA DO NÓ({key}):({h})")
+                print(f"PROFUNDIDADE DO NÓ({key}):({h})")
                 return h 
             elif key < next.data:
                 h += 1
@@ -88,7 +88,25 @@ class BinaryTree:
 
         print("valor não encontrado")
         return 
-           
+
+    def _Hnode(self,no):
+        if no == None:
+            return -1
+        else:
+            left_H = self._Hnode(no.left)
+            right_H = self._Hnode(no.right)
+
+        return 1 + max(left_H,right_H)
+        
+    def getheight(self):
+        if self.root == None:
+            print("ARVORE VAZIA\n")
+            return
+        
+        height = self._Hnode(self.root)
+        print(f"ALTURA DA ARVORE:({height})\n")
+        return height
+            
 if __name__ == "__main__":
     teste = BinaryTree()
     teste.get(10)
@@ -96,13 +114,10 @@ if __name__ == "__main__":
     teste.insert(10)
     teste.insert(30)
     teste.insert(17)
+    teste.insert(19)
     teste.get(30)
     teste.get(17)
     teste.get(15)
     teste.size( )
-    teste.getheight(17)
-    
-
-
-
-
+    teste.getdepth(17)
+    teste.getheight()
