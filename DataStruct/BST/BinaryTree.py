@@ -1,9 +1,10 @@
+
 class Node:
     def __init__(self,data):
         self.data = data
         self.left = None
         self.right = None
-
+        
 
 class BinaryTree:
     def __init__(self):
@@ -16,7 +17,7 @@ class BinaryTree:
             if(self.root == None):
                 self.root = aux
                 self._size += 1
-                return
+                return True
 
             next = self.root
             while True:
@@ -24,23 +25,23 @@ class BinaryTree:
                     if next.left is None:
                         next.left = aux
                         self._size += 1
-                        break
+                        return True
                     next = next.left
 
                 elif aux.data > next.data:
                     if next.right is None:
                         next.right = aux
                         self._size += 1
-                        break
+                        return True
                     next = next.right
         except:
-            print("ERRO AO INSERIR NA ARVORE\n")
+            return False
 
     def get(self,key):
         try:
             if self.root == None:
                 print("ARVORE VAZIA\n")
-                return
+                return None
             
             next = self.root
             while next is not None:
@@ -64,9 +65,9 @@ class BinaryTree:
         print(f"O TAMANHO DA ARVORE(QUANTIDADE DE NÓS): {self._size}\n")
 
     def getdepth(self,key):
-        if self.root == None:
+        if self.root == None or key == None:
                 print("ARVORE VAZIA\n")
-                return
+                return None
         
         next = self.root
 
@@ -101,23 +102,80 @@ class BinaryTree:
     def getheight(self):
         if self.root == None:
             print("ARVORE VAZIA\n")
-            return
+            return 0
         
         height = self._Hnode(self.root)
         print(f"ALTURA DA ARVORE:({height})\n")
         return height
+
+    def auxIPL(self,no,level):
+       if no is None:
+        return 0
+
+       aux = level 
+
+       return aux + self.auxIPL(no.right,level + 1) +self.auxIPL(no.left,level+1)         
+             
+    
+    def internal_path_lenght(self):
+        if self.root == None:
+            print("ARVORE VAZIA\n")
+            return
             
-if __name__ == "__main__":
-    teste = BinaryTree()
-    teste.get(10)
-    teste.insert(20)
-    teste.insert(10)
-    teste.insert(30)
-    teste.insert(17)
-    teste.insert(19)
-    teste.get(30)
-    teste.get(17)
-    teste.get(15)
-    teste.size( )
-    teste.getdepth(17)
-    teste.getheight()
+        return self.auxIPL(self.root,0)
+
+    def Max_value(self):
+            if self.root == None:
+                print("ARVORE VAZIA\n")
+                return
+            
+            next = self.root
+            while next:
+                if next.right == None:
+                    return next.data
+                else:
+                    next = next.right
+    
+    def Min_value(self):
+            if self.root == None:
+                print("ARVORE VAZIA\n")
+                return
+            
+            next = self.root
+            while next:
+                if next.left == None:
+                    return next.data
+                else:
+                    next = next.left
+
+    def is_balanced(self):
+        if self.root is None:
+            return False
+        
+        _, _balanced = self.aux_isbalanced(self.root)
+
+        if _balanced:
+            return True
+        else:
+            return False
+        
+    def aux_isbalanced(self,node):
+        if node is None:
+            return 0,True
+
+        #comeca a verificar os filhos do no atual 
+        left_h,left_bal = self.aux_isbalanced(node.left)
+        right_h,right_bal = self.aux_isbalanced(node.right)
+
+        #calcula a altura atual 
+        current_h = max(left_h,right_h)+1
+
+        #verifica a condição de balanceamento para AVL_trees 
+        #ps abs para retornar o valor absoluto 
+        isbalanced = (left_bal and right_bal and abs(right_h - left_h)<=1)
+
+        return current_h,isbalanced
+    
+    #TODO funçoes para percorrer a arvore 
+
+                     
