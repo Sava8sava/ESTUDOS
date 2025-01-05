@@ -21,7 +21,7 @@
   <lib desc="#BFH-Praktika" name="9"/>
   <lib desc="#Input/Output-Extra" name="10"/>
   <lib desc="#Soc" name="11"/>
-  <main name="main"/>
+  <main name="conversor"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -54,107 +54,6 @@
     <tool lib="4" name="D Flip-Flop"/>
     <tool lib="4" name="Register"/>
   </toolbar>
-  <circuit name="main">
-    <a name="appearance" val="logisim_evolution"/>
-    <a name="circuit" val="main"/>
-    <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="2.0"/>
-    <comp lib="0" loc="(340,250)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="s"/>
-      <a name="width" val="3"/>
-    </comp>
-    <comp lib="0" loc="(340,250)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="3"/>
-    </comp>
-    <comp lib="5" loc="(850,500)" name="7-Segment Display"/>
-    <comp lib="5" loc="(910,240)" name="7-Segment Display"/>
-    <comp loc="(740,260)" name="conversor"/>
-    <comp loc="(740,500)" name="convSIMP"/>
-    <wire from="(350,270)" to="(350,350)"/>
-    <wire from="(350,350)" to="(350,580)"/>
-    <wire from="(350,350)" to="(440,350)"/>
-    <wire from="(350,580)" to="(520,580)"/>
-    <wire from="(360,270)" to="(360,300)"/>
-    <wire from="(360,300)" to="(360,520)"/>
-    <wire from="(360,300)" to="(480,300)"/>
-    <wire from="(360,520)" to="(360,540)"/>
-    <wire from="(360,520)" to="(520,520)"/>
-    <wire from="(370,270)" to="(370,280)"/>
-    <wire from="(370,280)" to="(390,280)"/>
-    <wire from="(390,280)" to="(390,480)"/>
-    <wire from="(390,280)" to="(500,280)"/>
-    <wire from="(390,480)" to="(390,500)"/>
-    <wire from="(390,480)" to="(520,480)"/>
-    <wire from="(440,240)" to="(440,350)"/>
-    <wire from="(440,240)" to="(520,240)"/>
-    <wire from="(440,350)" to="(470,350)"/>
-    <wire from="(480,260)" to="(480,300)"/>
-    <wire from="(480,260)" to="(500,260)"/>
-    <wire from="(500,260)" to="(500,270)"/>
-    <wire from="(500,270)" to="(510,270)"/>
-    <wire from="(500,280)" to="(500,300)"/>
-    <wire from="(500,300)" to="(520,300)"/>
-    <wire from="(510,270)" to="(510,280)"/>
-    <wire from="(510,280)" to="(520,280)"/>
-    <wire from="(520,240)" to="(520,260)"/>
-    <wire from="(520,480)" to="(520,500)"/>
-    <wire from="(520,540)" to="(520,580)"/>
-    <wire from="(740,260)" to="(780,260)"/>
-    <wire from="(740,280)" to="(840,280)"/>
-    <wire from="(740,300)" to="(840,300)"/>
-    <wire from="(740,320)" to="(920,320)"/>
-    <wire from="(740,340)" to="(910,340)"/>
-    <wire from="(740,360)" to="(870,360)"/>
-    <wire from="(740,380)" to="(890,380)"/>
-    <wire from="(740,500)" to="(810,500)"/>
-    <wire from="(740,520)" to="(820,520)"/>
-    <wire from="(740,540)" to="(840,540)"/>
-    <wire from="(740,560)" to="(810,560)"/>
-    <wire from="(740,580)" to="(850,580)"/>
-    <wire from="(740,600)" to="(780,600)"/>
-    <wire from="(740,620)" to="(800,620)"/>
-    <wire from="(780,200)" to="(780,260)"/>
-    <wire from="(780,200)" to="(930,200)"/>
-    <wire from="(780,440)" to="(780,600)"/>
-    <wire from="(780,440)" to="(860,440)"/>
-    <wire from="(800,470)" to="(800,620)"/>
-    <wire from="(800,470)" to="(850,470)"/>
-    <wire from="(810,450)" to="(810,500)"/>
-    <wire from="(810,450)" to="(870,450)"/>
-    <wire from="(810,560)" to="(810,610)"/>
-    <wire from="(810,610)" to="(860,610)"/>
-    <wire from="(820,490)" to="(820,520)"/>
-    <wire from="(820,490)" to="(880,490)"/>
-    <wire from="(840,170)" to="(840,280)"/>
-    <wire from="(840,170)" to="(940,170)"/>
-    <wire from="(840,300)" to="(840,310)"/>
-    <wire from="(840,310)" to="(930,310)"/>
-    <wire from="(840,540)" to="(840,590)"/>
-    <wire from="(840,590)" to="(870,590)"/>
-    <wire from="(850,470)" to="(850,500)"/>
-    <wire from="(850,560)" to="(850,580)"/>
-    <wire from="(860,440)" to="(860,500)"/>
-    <wire from="(860,560)" to="(860,610)"/>
-    <wire from="(870,230)" to="(870,360)"/>
-    <wire from="(870,230)" to="(920,230)"/>
-    <wire from="(870,450)" to="(870,500)"/>
-    <wire from="(870,560)" to="(870,590)"/>
-    <wire from="(880,490)" to="(880,500)"/>
-    <wire from="(890,210)" to="(890,380)"/>
-    <wire from="(890,210)" to="(920,210)"/>
-    <wire from="(910,220)" to="(910,240)"/>
-    <wire from="(910,220)" to="(920,220)"/>
-    <wire from="(910,300)" to="(910,340)"/>
-    <wire from="(920,210)" to="(920,220)"/>
-    <wire from="(920,230)" to="(920,240)"/>
-    <wire from="(920,300)" to="(920,320)"/>
-    <wire from="(930,200)" to="(930,240)"/>
-    <wire from="(930,300)" to="(930,310)"/>
-    <wire from="(940,170)" to="(940,240)"/>
-  </circuit>
   <circuit name="conversor">
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="conversor"/>
@@ -834,4 +733,85 @@
     <wire from="(80,150)" to="(160,150)"/>
     <wire from="(80,70)" to="(110,70)"/>
   </circuit>
+  <circuit name="ttt">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="ttt"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="2.0"/>
+    <comp lib="0" loc="(210,200)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(550,190)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+    </comp>
+    <comp lib="5" loc="(660,270)" name="7-Segment Display"/>
+    <comp loc="(320,350)" name="decodificador_hex_vhdl">
+      <a name="appearance" val="classic"/>
+    </comp>
+    <wire from="(210,200)" to="(230,200)"/>
+    <wire from="(230,200)" to="(230,350)"/>
+    <wire from="(230,350)" to="(290,350)"/>
+    <wire from="(320,350)" to="(380,350)"/>
+    <wire from="(380,190)" to="(380,350)"/>
+    <wire from="(380,190)" to="(550,190)"/>
+    <wire from="(560,210)" to="(560,240)"/>
+    <wire from="(560,240)" to="(680,240)"/>
+    <wire from="(570,210)" to="(570,230)"/>
+    <wire from="(570,230)" to="(690,230)"/>
+    <wire from="(580,210)" to="(580,350)"/>
+    <wire from="(580,350)" to="(680,350)"/>
+    <wire from="(590,210)" to="(590,370)"/>
+    <wire from="(590,370)" to="(670,370)"/>
+    <wire from="(600,210)" to="(600,380)"/>
+    <wire from="(600,380)" to="(660,380)"/>
+    <wire from="(610,210)" to="(610,250)"/>
+    <wire from="(610,250)" to="(670,250)"/>
+    <wire from="(620,210)" to="(660,210)"/>
+    <wire from="(660,210)" to="(660,270)"/>
+    <wire from="(660,330)" to="(660,380)"/>
+    <wire from="(670,250)" to="(670,270)"/>
+    <wire from="(670,330)" to="(670,370)"/>
+    <wire from="(680,240)" to="(680,270)"/>
+    <wire from="(680,330)" to="(680,350)"/>
+    <wire from="(690,230)" to="(690,270)"/>
+  </circuit>
+  <vhdl name="decodificador_hex_vhdl">library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity decodificador_hex_vhdl is
+    Port (
+        entrada : in  STD_LOGIC_VECTOR(3 downto 0);
+        saida   : out STD_LOGIC_VECTOR(6 downto 0)
+    );
+end decodificador_hex_vhdl;
+
+architecture Behavioral of decodificador_hex_vhdl is
+begin
+    process(entrada)
+    begin
+        case entrada is
+            when "0000" =&gt; saida &lt;= "1111110";
+            when "0001" =&gt; saida &lt;= "0110000";
+            when "0010" =&gt; saida &lt;= "1101101";
+            when "0011" =&gt; saida &lt;= "1111001";
+            when "0100" =&gt; saida &lt;= "0110011";
+            when "0101" =&gt; saida &lt;= "1011011";
+            when "0110" =&gt; saida &lt;= "1011111";
+            when "0111" =&gt; saida &lt;= "1110000";
+            when "1000" =&gt; saida &lt;= "1111111";
+            when "1001" =&gt; saida &lt;= "1111011";
+            when "1010" =&gt; saida &lt;= "1110111";
+            when "1011" =&gt; saida &lt;= "0011111";
+            when "1100" =&gt; saida &lt;= "1001110";
+            when "1101" =&gt; saida &lt;= "0111101";
+            when "1110" =&gt; saida &lt;= "1001111";
+            when "1111" =&gt; saida &lt;= "1000111";
+            when others =&gt; saida &lt;= "0000000";
+        end case;
+    end process;
+end Behavioral;
+</vhdl>
 </project>

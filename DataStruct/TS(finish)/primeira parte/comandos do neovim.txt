@@ -1,0 +1,82 @@
+🚀 Principais Comandos do Neovim 🚀
+
+O Neovim é baseado no Vim, então os comandos são bem parecidos. Abaixo estão os comandos essenciais organizados por categorias.
+📝 Modos do Neovim
+
+    Normal (Padrão): Navegação e manipulação de texto.
+        Pressione Esc para voltar ao modo Normal.
+    Inserção: Digitar texto diretamente.
+        Pressione i para inserir antes do cursor.
+        Pressione a para inserir após o cursor.
+    Visual: Selecionar texto.
+        Pressione v para seleção de texto.
+        Pressione V para selecionar linha inteira.
+    Linha de Comando: Executar comandos.
+        Pressione : para acessar o modo de comando.
+
+📂 Gerenciamento de Arquivos
+
+    :w → Salvar arquivo.
+    :w nome_do_arquivo → Salvar como outro nome.
+    :q → Sair.
+    :q! → Forçar saída sem salvar.
+    :wq → Salvar e sair.
+    :e nome_do_arquivo → Abrir outro arquivo.
+    :ls → Listar buffers abertos.
+    :bd → Fechar o buffer atual.
+
+🔍 Navegação
+
+    h, j, k, l → Mover cursor (esquerda, baixo, cima, direita).
+    Ctrl + d → Rolar para baixo meia tela.
+    Ctrl + u → Rolar para cima meia tela.
+    gg → Ir para o topo do arquivo.
+    G → Ir para o final do arquivo.
+    :n → Ir para a linha n.
+
+✂️ Editar Texto
+
+    x → Deletar caractere sob o cursor.
+    dd → Deletar linha inteira.
+    yy → Copiar linha inteira.
+    p → Colar após o cursor.
+    u → Desfazer última ação.
+    Ctrl + r → Refazer última ação.
+    :set number → Mostrar números das linhas.
+    :set relativenumber → Mostrar números relativos.
+
+🔍 Buscar e Substituir
+
+    /palavra → Buscar palavra no texto.
+    n → Próxima ocorrência.
+    N → Ocorrência anterior.
+    :s/antigo/novo/g → Substituir todas as ocorrências na linha atual.
+    :%s/antigo/novo/g → Substituir todas as ocorrências no arquivo.
+
+⚙️ Configuração Temporária
+
+    :set ignorecase → Ignorar maiúsculas/minúsculas na busca.
+    :set noignorecase → Não ignorar maiúsculas/minúsculas.
+    :set tabstop=4 → Definir largura do tab como 4 espaços.
+    :set expandtab → Usar espaços em vez de tabulação.
+
+💻 Dividir Janela
+
+    :split ou :sp → Dividir horizontalmente.
+    :vsplit ou :vsp → Dividir verticalmente.
+    Ctrl + w + w → Alternar entre janelas.
+    Ctrl + w + h/j/k/l → Mover entre janelas (esquerda/baixo/cima/direita).
+
+🛠️ Plugins e Configurações
+
+    :PlugInstall → Instalar plugins (se estiver usando vim-plug).
+    :PlugUpdate → Atualizar plugins.
+    :checkhealth → Verificar problemas no Neovim.
+
+🚦 Sair Rapidamente
+
+    :x → Salvar e sair (igual :wq).
+    ZZ → Salvar e sair (modo normal).
+    ZQ → Sair sem salvar (modo normal).
+
+Se precisar de ajuda em tempo real no Neovim, basta digitar:
